@@ -18,7 +18,6 @@ const userRoutes = require('./routes/users.route');
 app.use(`${api}/users`,userRoutes);
 
 
-
 // connect to mongo database
 mongoose.connect(connectionString).then(() => {
   console.log("Database is ready to connect");
