@@ -30,7 +30,7 @@ async function login(req, res) {
   })
 
   if (!user) {
-    return res.status(404).send('User not found')
+    return res.status(401).send('User not found')
   }
 
   const secret = process.env.secret;
@@ -50,7 +50,7 @@ async function login(req, res) {
     })
     
   } else {
-    return res.status(400).send('Password is Wrong')
+    return res.status(401).send('Password is Wrong')
   }
 
 }
