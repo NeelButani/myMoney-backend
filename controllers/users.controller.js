@@ -12,6 +12,14 @@ async function register(req,res){
     isAdmin : req.body.isAdmin
   })
 
+  const alreadyAUser = await User.findOne({
+    email: req.body.email
+  })
+  
+  if(alreadyAUser){
+    return res.status(401).send('Already a User')
+  }
+
   user = await user.save();
 
   if(!user){
