@@ -17,7 +17,7 @@ async function register(req,res){
   })
   
   if(alreadyAUser){
-    return res.status(401).send('Already a User')
+    return res.status(403).send('User already exicts')
   }
 
   user = await user.save();
